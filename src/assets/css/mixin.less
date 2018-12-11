@@ -1,0 +1,48 @@
+@title: 16px;
+@subtitle: 13px;
+@border: #e1e1e1;
+
+//flex box
+#f-flexbox(@jc:space-between, @ai:center, @fd:row, @fw:nowrap) {
+  display: flex;
+  flex: 1;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-direction: @fd;
+  flex-wrap: @fw;
+}
+
+#f-border(@border: @border) {
+  border: solid 1px @border;
+}
+
+#f-radius(@radius: 50%) {
+  border-radius: @radius;
+  border: 1px solid #eee;
+}
+
+// 背景图片地址和大小
+#f-bg(@width, @height, @url) {
+  width: @width;
+  height: @height;
+  background: url(@url) center center no-repeat;
+  background-size: contain;
+}
+
+#f-bg-url(@url) {
+  background: url(@url) center center no-repeat;
+  background-size: contain;
+}
+
+// clamp
+#f-textoverflow(@clamp:1) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @clamp;
+  overflow: hidden;
+}
+
+//渐变
+#f-gradient(@rc, @lc) {
+  background-image: -webkit-linear-gradient(0deg, @rc, @lc);
+}
