@@ -4,14 +4,14 @@
 
 ## 框架说明
 [vue] https://cn.vuejs.org/
-[mint-ui] http://mint-ui.github.io/#!/zh-cn
-[vuex] https://vuex.vuejs.org/zh/guide/
-[axios] https://www.kancloud.cn/yunye/axios/234845
-[rem布局] 1rem = 20px
+- [mint-ui] http://mint-ui.github.io/#!/zh-cn
+- [vuex] https://vuex.vuejs.org/zh/guide/
+- [axios] https://www.kancloud.cn/yunye/axios/234845
+- [rem布局] 1rem = 20px
 <!-- [rem布局] https://github.com/amfe/article/issues/17 (如设计图宽为375px,则设置1rem=37.5px) -->
-[less] https://less.bootcss.com/
-[Normalize.css] https://www.jianshu.com/p/9d7ff89757fd (CSS reset的替代方案)
-[flex.css] https://github.com/lzxb/flex.css/blob/master/docs/zh-ch.md (移动端快速布局)
+- [less] https://less.bootcss.com/
+- [Normalize.css] https://www.jianshu.com/p/9d7ff89757fd (CSS reset的替代方案)
+- [flex.css] https://github.com/lzxb/flex.css/blob/master/docs/zh-ch.md (移动端快速布局)
 
 ## Build Setup
 
