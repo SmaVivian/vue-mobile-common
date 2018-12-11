@@ -5,7 +5,7 @@ import { Indicator, Toast } from 'mint-ui';
 
 // create an axios instance
 const service = axios.create({
-  // baseURL: process.env.BASE_API, // api 的 base_url
+  baseURL: process.env.BASE_API, // api 的 base_url
   // baseURL: location.hostname == 'localhost' ? '/rest' : 'http://47.93.228.120:8085', // api 的 base_url
   timeout: 5000 // request timeout
 })

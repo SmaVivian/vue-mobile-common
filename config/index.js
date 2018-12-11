@@ -11,13 +11,13 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      // '/stp-web': {
-      //   changeOrigin: true,
-      //   target: 'http://www.legocz.com',  // 代理请求的第三方接口
-      //   // pathRewrite: {
-      //   //     '^/api': '/Coolmart'
-      //   // }
-      // }
+      '/admin': {
+        changeOrigin: true,
+        target: 'http://192.168.5.102:8082',  // 天津测试环境
+        // pathRewrite: {
+        //     '^/api': '/Coolmart'
+        // }
+      }
     },
 
     // Various Dev Server settings
