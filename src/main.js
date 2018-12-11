@@ -11,6 +11,7 @@ import store from '@/store'
 import FastClick from 'fastclick'
 import '@/utils/filters'
 import request from './utils/request';
+import './utils/mock';
 Vue.prototype.$http = request;
 
 if ('addEventListener' in document) {

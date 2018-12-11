@@ -41,6 +41,22 @@ export default {
       this.$toast('Hello world!')  // 测试mint-ui
     },
     getData() {
+      this.$http.get('/demo', {
+        
+      }).then(response => {
+        console.log('data:', response);
+      }, error => {
+        console.log('异常');
+      })
+
+      this.$http.get('/demo/list', {
+        
+      }).then(response => {
+        console.log('data1:', response);
+      }, error => {
+        console.log('异常');
+      })
+
       // this.$http.get('/stp-web/route/list', {
       //   keyWord: '',
       //   orderType: 0,
