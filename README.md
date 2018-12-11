@@ -3,7 +3,7 @@
 > a vue mobile project
 
 ## 框架说明
-[vue] https://cn.vuejs.org/
+- [vue] https://cn.vuejs.org/
 - [mint-ui] http://mint-ui.github.io/#!/zh-cn
 - [vuex] https://vuex.vuejs.org/zh/guide/
 - [axios] https://www.kancloud.cn/yunye/axios/234845
