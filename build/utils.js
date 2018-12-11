@@ -47,7 +47,8 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        fallback: 'vue-style-loader'
+        fallback: 'vue-style-loader',
+        publicPath: '../../'    // 打包后的文件被放到 文件夹下  如 web/static  mobile/static
       })
     } else {
       return ['vue-style-loader'].concat(loaders)

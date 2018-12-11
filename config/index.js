@@ -52,7 +52,8 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    // assetsPublicPath: '/',
+    assetsPublicPath: './',     // 打包后的文件被放到 文件夹下  如 web/static  mobile/static
 
     /**
      * Source Maps
