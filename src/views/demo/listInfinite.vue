@@ -59,13 +59,11 @@ export default {
   },
   methods: {
     loadMore() {
-      console.log(111111111)
       this.currentPage++;
       this.loading = true;
       this.getData();
     },
     getData(isFirst) {
-      console.log(isFirst)
       this.loadingTextBtn=true;
       // mock数据
       // this.$http.get("/demo/listcommon", {
@@ -78,7 +76,6 @@ export default {
         size: this.size,
         currentPage: this.currentPage
       }).then(res => {
-        console.log('data1:', res);
         if(res.success === 1) {
           this.loading = res.data.length > 0 ? false : true;
           this.allLoaded = this.currentPage >= res.page.totalPage ? true : false;
