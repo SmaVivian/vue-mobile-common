@@ -4,6 +4,7 @@ import Demo from '@views/demo/index'
 import DemoList from '@views/demo/demoList'
 import ListInfinite from '@views/demo/listInfinite'   // 列表无限加载
 import ListPullDown from '@views/demo/listPullDown'   // 列表下拉刷新无限加载
+import ListTab from '@views/demo/listTab'   // 列表下拉刷新无限加载
 // import HelloWorld from '@cmp/HelloWorld'
 
 Vue.use(Router)
@@ -29,9 +30,9 @@ export default new Router({
       meta: { keepAlive: false }
     },
     {
-      path: '/list/pulldown',
-      name: 'ListPullDown',
-      component: ListPullDown,
+      path: '/list/tab',
+      name: 'ListTab',
+      component: ListTab,
       meta: { keepAlive: false }
     },
     // {
