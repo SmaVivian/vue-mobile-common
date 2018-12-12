@@ -57,6 +57,10 @@ body,
   background: #fff;
 }
 
+img {
+  object-fit: cover;
+}
+
 #app {
   // min-width: 10rem;
   // max-width: 10rem;
@@ -89,6 +93,43 @@ body,
   font-weight: bold;
   margin-top: 0.3rem;
   padding-left: 0.16rem;
+}
+
+.g-loading-text{
+  width:100%;
+  text-align: center;
+  height: 0.5rem;
+  padding-top: 0.8rem;
+  .mint-spinner-snake {
+    position: relative;
+    top: -.2rem;
+  }
+  span{
+    display: inline-block;
+  }
+  .text{
+    transform: translate(8px,-6px);
+    font-size:0.75rem;
+    color:rgba(78,77,77,1);
+  }
+}
+
+.g-no-data {
+  margin-top: 1.65rem;
+  .no-data-bg {
+    margin: auto;
+    width: 6.85rem;
+    height: 6.74rem;
+    background: url(../../assets/images/no-data.svg) center center no-repeat;
+    background-size: contain;
+  }
+  .no-data-txt {
+    color: #444;
+    font-size: .65rem;
+    font-weight: 400;
+    line-height: .9rem;
+    text-align: center;
+  }
 }
 
 .mgt3 {

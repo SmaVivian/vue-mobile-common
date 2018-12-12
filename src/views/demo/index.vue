@@ -57,6 +57,14 @@ export default {
         console.log('异常');
       })
 
+      this.$http.get('/demo/listcommon', {
+        
+      }).then(response => {
+        console.log('data2:', response);
+      }, error => {
+        console.log('异常');
+      })
+
       // this.$http.get('/stp-web/route/list', {
       //   keyWord: '',
       //   orderType: 0,
