@@ -2,7 +2,7 @@
   <div>
     <div class="demo-list" flex="dir:left box:mean cross:center">
       <router-link tag="div" to="/list/infinite" class="item g-1px-r" flex="cross:center main:center">list Infinite scroll</router-link>
-      <div class="item g-1px-r" flex="cross:center main:center">list pull down</div>
+      <router-link tag="div" to="/list/pulldown" class="item g-1px-r" flex="cross:center main:center">list pull down</router-link>
       <div class="item" flex="cross:center main:center">list</div>
     </div>
     <div class="demo-list" flex="dir:left box:mean">
@@ -12,6 +12,12 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  
+}
+</script>
 
 <style lang="less" scoped>
   .g-1px-t,
@@ -50,9 +56,3 @@
     }
   }
 </style>
-
-<script>
-export default {
-  
-}
-</script>
