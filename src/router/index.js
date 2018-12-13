@@ -5,6 +5,7 @@ import DemoList from '@views/demo/demoList'
 import ListInfinite from '@views/demo/listInfinite'   // 列表无限加载
 import ListPullDown from '@views/demo/listPullDown'   // 列表下拉刷新无限加载
 import ListTab from '@views/demo/listTab'   // 列表下拉刷新无限加载
+import DemoForm from '@views/demo/form'   // 表单
 // import HelloWorld from '@cmp/HelloWorld'
 
 Vue.use(Router)
@@ -33,6 +34,12 @@ export default new Router({
       path: '/list/tab',
       name: 'ListTab',
       component: ListTab,
+      meta: { keepAlive: false }
+    },
+    {
+      path: '/demo/form',
+      name: 'DemoForm',
+      component: DemoForm,
       meta: { keepAlive: false }
     },
     // {

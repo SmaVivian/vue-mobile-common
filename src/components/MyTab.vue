@@ -20,7 +20,7 @@ export default {
       type: Array,
       default: []
     },
-    callback: {}
+    callback: Function
   },
   data() {
     return {
