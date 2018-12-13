@@ -1,0 +1,65 @@
+.g-form {
+  font-size: 16px;
+  color: #666;
+}
+.m-form-col {
+  // display: flex;
+  // flex-direction: column;
+  .title {
+    // margin: .5rem 0;
+    padding: 1rem 1rem 0;
+    color: #999999;
+    font-size: 14px;
+  }
+  .control {
+    position: relative;
+    padding: .5rem 1rem;
+    height: 3rem;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    .label {
+      width: 4.5rem;
+      margin-right: 1rem;
+      color: #000;
+    }
+    .g-icon-more {
+      position: absolute;
+      right: 1rem;
+      top: 1.5rem;
+    }
+    input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      -webkit-appearance: none;
+      background-color: transparent;
+      height: 1.2rem;
+      line-height: 1.2rem;
+    }
+    textarea {
+      width: 100%;
+    }
+    &.baseline {
+      align-items: baseline;
+    }
+    &:after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 1px;
+      border-top: 1px solid #D9D9D9;
+      color: #D9D9D9;
+      transform-origin: 0 0;
+      transform: scaleY(0.5);
+    }
+  }
+  .help {
+    padding: 0 1rem;
+    font-size: 12px;
+    margin-top: .25rem;
+    color: #ff3860;
+  }
+}
