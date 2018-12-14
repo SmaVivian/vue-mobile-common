@@ -54,7 +54,7 @@
       <div class="m-form-col">
         <div class="control">
           <label class="label">生日</label>
-          <input type="text" :value="birthday" name="" placeholder="请选择时间" @click="openPicker">
+          <span class="tri-name" @click="openPicker">{{birthday ? birthday : '请选择时间'}}</span>
           <i class="g-icon-more"></i>
         </div>
       </div>
@@ -105,7 +105,9 @@ export default {
       email: '',
       password: '',
       phone: '',
-      birthday: ''
+      birthday: '',
+
+      handler:function(e){e.preventDefault();},
     }
   },
   methods: {
@@ -147,21 +149,37 @@ export default {
         }
       });
     },
+    // 打开时间选择器
     openPicker() {
       this.$refs.picker.open();
+
+      this.closeTouch();//关闭默认事件
     },
-    handleConfirm (data){
+    handleConfirm(data) {
+      this.openTouch();//打开默认事件
+
       this.birthday = moment(data).format('YYYY/MM/DD');
     },
-    updateAutosize () {
+
+    // 高度自适应
+    updateAutosize() {
       Autosize.update(this.$refs.textarea)
     },
-    // prop.autosize
-    bindAutosize () {
+    bindAutosize() {
       Autosize(this.$refs.textarea)
     },
-    unbindAutosize () {
+    unbindAutosize() {
       Autosize.destroy(this.$refs.textarea)
+    },
+
+    /*解决iphone页面层级相互影响滑动的问题*/
+    closeTouch() {
+      document.getElementsByTagName("body")[0].addEventListener('touchmove',
+        this.handler, { passive: false} ); //阻止默认事件
+    },
+    openTouch() {
+      document.getElementsByTagName("body")[0].removeEventListener('touchmove',
+        this.handler, { passive: false} ); //打开默认事件
     },
   },
   mounted() {
