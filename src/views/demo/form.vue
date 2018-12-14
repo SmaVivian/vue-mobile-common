@@ -56,9 +56,9 @@
       </div>
 
       <div class="m-form-col">
-        <div class="control baseline">
+        <div class="control t-area">
           <label class="label">文本域</label>
-          <textarea name="" id=""></textarea>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
         </div>
       </div>
     </div>
