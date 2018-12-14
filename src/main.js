@@ -9,6 +9,7 @@ import '@/plugins/rem'
 import MintUI from 'mint-ui'
 import store from '@/store'
 import FastClick from 'fastclick'
+import Cookies from 'js-cookie'
 import '@/utils/filters'
 import request from './utils/request';
 import './utils/mock';
@@ -24,6 +25,13 @@ if ('addEventListener' in document) {
 Vue.use(MintUI)
 
 router.beforeEach((to, from, next) => {
+  // 页面刷新时，重新赋值token、userid
+  if (Cookies.get('userid')) {  
+    store.commit('SET_USER_INFO', {
+      token: Cookies.get('token'),
+      userid: Cookies.get('userid'),
+    }); 
+  }  
   next();
 });
 
