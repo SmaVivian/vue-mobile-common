@@ -12,6 +12,8 @@
 - [less] https://less.bootcss.com/
 - [Normalize.css] https://www.jianshu.com/p/9d7ff89757fd (CSS reset的替代方案)
 - [flex.css] https://github.com/lzxb/flex.css/blob/master/docs/zh-ch.md (移动端快速布局)
+- [vee-validate] https://baianat.github.io/vee-validate/examples/ (表单校验)
+- [autosize] 文本域高度自适应
 
 ## Build Setup
 

@@ -58,7 +58,14 @@
       <div class="m-form-col">
         <div class="control t-area">
           <label class="label">文本域</label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <textarea name="" id="" cols="30" rows="5" ref="textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="m-form-col">
+        <div class="control t-area">
+          <label class="label">自适应高</label>
+          <textarea name="" id="" cols="30" rows="1" ref="textarea"></textarea>
         </div>
       </div>
     </div>
@@ -78,6 +85,7 @@
 </template>
 
 <script>
+import Autosize from 'autosize' // 文本域高度自适应
 import moment from 'moment'
 export default {
   data() {
@@ -98,6 +106,22 @@ export default {
     handleConfirm (data){
       this.birthday = moment(data).format('YYYY/MM/DD');
     },
+    updateAutosize () {
+      Autosize.update(this.$refs.textarea)
+    },
+    // prop.autosize
+    bindAutosize () {
+      Autosize(this.$refs.textarea)
+    },
+    unbindAutosize () {
+      Autosize.destroy(this.$refs.textarea)
+    },
+  },
+  mounted() {
+    this.bindAutosize()
+  },
+  beforeDestroy () {
+    this.unbindAutosize()
   }
 }
 </script>
