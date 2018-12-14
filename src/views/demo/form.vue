@@ -1,6 +1,10 @@
 <template>
   <div class="page-form">
     <div class="g-form">
+      <div class="top">
+        <img :src="avatarurl" alt="" :onerror="defaultHeadImg" @click="clickFile">
+      </div>
+
       <div class="m-form-col">
         <div class="title">邮箱验证</div>
         <div class="control">
@@ -81,6 +85,8 @@
       confirmText="确定"
       :startDate="startDate">
     </mt-datetime-picker>
+
+    <input type="file" id="fileInput" style="display: none;" @change="triggerFile($event)" ref="filePicker">
   </div>
 </template>
 
@@ -90,6 +96,9 @@ import moment from 'moment'
 export default {
   data() {
     return {
+      defaultHeadImg: this.$store.getters.defaultHeadImg,
+      
+      avatarurl: '',  // 头像
       mytime: "",
       startDate: new Date(new Date().getTime() + 24*60*60*1000),
       name: '',
@@ -100,6 +109,44 @@ export default {
     }
   },
   methods: {
+    clickFile() {
+      // document.getElementById('fileInput').click();
+      const event = new MouseEvent('click');
+      this.$refs.filePicker.dispatchEvent(event);
+    },
+    triggerFile(e) {
+      let vm = this;
+      let deviceFile = e.target.files;
+      let formData = new FormData();
+
+      formData.append('file', deviceFile[0]);
+      formData.append('userId', this.$store.getters.userid);
+      formData.append('token', this.$store.getters.token);
+
+      let config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+
+      this.$http.base({
+        method: 'post',
+        url: '/m/uploadHeadImage.do',
+        headers: {'Content-Type': 'multipart/form-data'},
+        data: formData
+      }).then((response)=>{
+        if(response.data.success==1) {
+          vm.avatarurl = response.data.data;
+        } else if (response.data.success==999) {
+          this.$common.confirmLogin();
+        } else {
+          Toast({
+            message: response.data.data || '接口异常',
+            position: 'bottom'
+          });
+        }
+      });
+    },
     openPicker() {
       this.$refs.picker.open();
     },
@@ -128,5 +175,16 @@ export default {
 
 <style lang="less" scoped>
   @import '../../assets/css/form.less';
+
+  .top {
+    width: 5rem;
+    margin: auto;
+    padding: 1.5rem 0;
+    img {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 100%;
+    }
+  }
 </style>
 
