@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="demo-list" flex="dir:left box:mean cross:center">
-      <router-link tag="div" to="/list/infinite" class="item g-1px-r" flex="cross:center main:center">list Infinite scroll</router-link>
-      <router-link tag="div" to="/list/pulldown" class="item g-1px-r" flex="cross:center main:center">list pull down</router-link>
-      <div class="item" flex="cross:center main:center">list</div>
+      <router-link tag="div" to="/list/infinite" class="item g-1px-r" flex="cross:center main:center">列表无限加载</router-link>
+      <router-link tag="div" to="/list/pulldown" class="item g-1px-r" flex="cross:center main:center">列表下拉刷新</router-link>
+      <router-link tag="div" to="/list/tab" class="item" flex="cross:center main:center">tab列表</router-link>
     </div>
     <div class="demo-list" flex="dir:left box:mean">
-      <div class="item g-1px-r g-1px-t" flex="cross:center main:center">list Infinite scroll</div>
-      <div class="item g-1px-r g-1px-t" flex="cross:center main:center">list pull down</div>
+      <router-link tag="div" to="/demo/login" class="item g-1px-r g-1px-t" flex="cross:center main:center">登录</router-link>
+      <router-link tag="div" to="/demo/form" class="item g-1px-r g-1px-t" flex="cross:center main:center">表单校验</router-link>
       <div class="item g-1px-t" flex="cross:center main:center">list</div>
     </div>
   </div>
@@ -51,6 +51,7 @@ export default {
   }
   .demo-list {
     text-align: center;
+    font-size: .75rem;
     .item {
       height: 5rem;
     }

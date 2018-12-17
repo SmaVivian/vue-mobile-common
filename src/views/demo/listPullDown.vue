@@ -6,13 +6,16 @@
         v-infinite-scroll="loadMore"
         infinite-scroll-disabled="loading"
         infinite-scroll-distance="10">
-        <li class="m-list" flex="dir:left cross:center" v-for="(item, index) in dataList" :key="index">
+        <router-link tag="li" class="m-list" flex="dir:left cross:center" 
+          v-for="(item, index) in dataList" 
+          :to="{path: '/list/pulldown/detail', query: {id: item.id}}"
+          :key="index">
           <img :src="item.pageUrl || ''" alt="">
           <div class="content" flex="dir:top">
-            <p>123</p>
-            <p>塑料袋开发建设地方</p>
+            <p class="ell">{{item.infoTopic}}</p>
+            <p>...</p>
           </div>
-        </li>
+        </router-link>
       </ul>
 
       <div class="g-loading-text" v-show="loadingTextBtn">
@@ -95,7 +98,16 @@ export default {
   },
   mounted() {
     this.getData(true);
-  }
+  },
+  // beforeRouteLeave(to, from, next) {
+  //   console.log(to.name)
+  //   if(to.name == 'DemoList') {//返回主页
+  //     from.meta.keepAlive = false //不缓存搜索页
+  //   } else if(to.name == 'ListPullDownDetail') {//进入详情页
+  //     from.meta.keepAlive = true //缓存搜索页
+  //   }
+  //   next()
+  // }
 }
 </script>
 
@@ -110,6 +122,7 @@ export default {
       }
       .content {
         padding-left: .5rem;
+        width: 13rem;
       }
     }
   }
