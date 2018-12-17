@@ -69,7 +69,7 @@ export default new Router({
       path: '/list/pulldown',
       name: 'ListPullDown',
       component: ListPullDown,
-      meta: { keepAlive: true, rank: 2 }
+      meta: { keepAlive: false, rank: 2 }
     },
     {
       path: '/list/pulldown/detail',
