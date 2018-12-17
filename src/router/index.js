@@ -26,8 +26,7 @@ Vue.mixin({
               : this.$vnode.key;
             var cache = this.$vnode.parent.componentInstance.cache;
             var keys  = this.$vnode.parent.componentInstance.keys;
-            if (cache[key])
-            {
+            if (cache[key]) {
               if (keys.length) {
                 var index = keys.indexOf(key);
                 if (index > -1) {

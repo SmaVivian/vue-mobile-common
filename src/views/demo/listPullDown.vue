@@ -35,6 +35,7 @@ import { Toast } from 'mint-ui';
 export default {
   data() {
     return {
+      isFirst: true,
       // defaultImg: this.$store.state.user.defaultImg,
       loading: true, //为false会加载更多数据
       loadingTextBtn: true,
@@ -59,7 +60,7 @@ export default {
       this.loading = true;
       this.getData();
     },
-    getData(isFirst) {
+    getData() {
       this.loadingTextBtn=true;
       // debugger
       // mock数据
@@ -77,7 +78,8 @@ export default {
           this.loading = res.data.length > 0 ? false : true;
           this.allLoaded = this.currentPage >= res.page.totalPage ? true : false;
           this.loadingText = this.allLoaded ? '已全部加载' : '正在加载更多';
-          if(isFirst) {
+          if(this.isFirst) {
+            this.isFirst = false;
             this.dataList = res.data;
             this.loadingTextBtn = false;
           } else {
@@ -97,8 +99,14 @@ export default {
     }
   },
   mounted() {
-    this.getData(true);
+    this.getData();
   },
+  activated() {
+    !this.isFirst && (this.loading = this.allLoaded);
+  },
+  deactivated() {
+    this.loading = true;
+  }
   // beforeRouteLeave(to, from, next) {
   //   console.log(to.name)
   //   if(to.name == 'DemoList') {//返回主页
