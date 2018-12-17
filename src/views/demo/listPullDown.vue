@@ -35,16 +35,17 @@ import { Toast } from 'mint-ui';
 export default {
   data() {
     return {
+      inPage: true,   // 进入页面
       isFirst: true,
       // defaultImg: this.$store.state.user.defaultImg,
-      loading: true, //为false会加载更多数据
+      loading: false, //为false会加载更多数据
       loadingTextBtn: true,
       loadingText: "正在加载更多",
       allLoaded: false,
 
       dataList: [],
       size: 10,
-      currentPage: 1
+      currentPage: 0
     }
   },
   methods: {
@@ -56,6 +57,8 @@ export default {
       this.getData(true);
     },
     loadMore() {
+      console.log(this.currentPage, this.loading)
+
       this.currentPage++;
       this.loading = true;
       this.getData();
@@ -76,6 +79,7 @@ export default {
       }).then(res => {
         if(res.success === 1) {
           this.loading = res.data.length > 0 ? false : true;
+          console.log('ajax',this.loading)
           this.allLoaded = this.currentPage >= res.page.totalPage ? true : false;
           this.loadingText = this.allLoaded ? '已全部加载' : '正在加载更多';
           if(this.isFirst) {
@@ -86,6 +90,9 @@ export default {
             this.dataList = this.dataList.concat(res.data);
             this.loadingTextBtn = this.allLoaded ? true : false;
           }
+
+          // 离开页面禁止滚动
+          !this.inPage && (this.loading = true);
         } else {
           Toast({
             message: error.message,
@@ -99,13 +106,17 @@ export default {
     }
   },
   mounted() {
-    this.getData();
+    // this.getData();
   },
   activated() {
-    !this.isFirst && (this.loading = this.allLoaded);
+    this.inPage = true;  // 进入页面
+    !this.isFirst && (this.loading = this.allLoaded);  // 取缓存页面是否还有更多数据
+    console.log('activated',this.loading)
   },
   deactivated() {
-    this.loading = true;
+    this.inPage = false;  // 离开页面
+    this.loading = true;  // 禁止滚动加载数据
+    console.log('deactivated',this.loading)
   }
   // beforeRouteLeave(to, from, next) {
   //   console.log(to.name)

@@ -62,7 +62,7 @@ export default new Router({
       path: '/list/infinite',
       name: 'ListInfinite',
       component: ListInfinite,
-      meta: { keepAlive: false }
+      meta: { keepAlive: false, rank: 2 }
     },
     // 缓存组件示例start
     {
