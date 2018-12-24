@@ -182,7 +182,8 @@ export default {
           height: 1.6rem;
         }
         .icon-wechat {
-          #f-bg-url("../images/demo/icon-wechat.png");
+          // #f-bg-url("../images/demo/icon-wechat.png");
+          #f-bg-url("~@images/demo/icon-wechat.png");
           background-size: contain;
         }
         .icon-blog {
@@ -190,7 +191,7 @@ export default {
           background-size: contain;
         }
         .icon-qq {
-          #f-bg-url("../images/demo/icon-qq.png");
+          #f-bg-url("~@images/demo/icon-qq.png");
           background-size: contain;
         }
       }

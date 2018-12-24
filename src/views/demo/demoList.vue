@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  @import '~@/assets/css/mixin.less';
+
   .g-1px-t,
   .g-1px-r {
     position: relative;

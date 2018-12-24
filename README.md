@@ -15,6 +15,10 @@
 - [vee-validate] https://baianat.github.io/vee-validate/examples/ (表单校验)
 - [autosize] 文本域高度自适应
 
+关于less
+- [混合引入]      @import '~@/assets/css/mixin.less';
+- [图片路径引入]  "~@images/demo/icon-qq.png"
+
 ## Build Setup
 
 ``` bash
