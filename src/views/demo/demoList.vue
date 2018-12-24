@@ -2,7 +2,7 @@
   <div>
     <div class="demo-list" flex="dir:left box:mean cross:center">
       <router-link tag="div" to="/list/infinite" class="item g-1px-r" flex="cross:center main:center">列表无限加载</router-link>
-      <router-link tag="div" to="/list/pulldown" class="item g-1px-r" flex="cross:center main:center">列表下拉刷新</router-link>
+      <router-link tag="div" to="/list/pulldown" class="item g-1px-r" flex="cross:center main:center">列表下拉刷新+图片懒加载</router-link>
       <router-link tag="div" to="/list/tab" class="item" flex="cross:center main:center">tab列表</router-link>
     </div>
     <div class="demo-list" flex="dir:left box:mean">

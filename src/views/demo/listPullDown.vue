@@ -10,7 +10,7 @@
           v-for="(item, index) in dataList" 
           :to="{path: '/list/pulldown/detail', query: {id: item.id}}"
           :key="index">
-          <img :src="item.pageUrl || ''" alt="">
+          <img v-lazy="item.pageUrl" :src="item.pageUrl || ''" alt="">
           <div class="content" flex="dir:top">
             <p class="ell">{{item.infoTopic}}</p>
             <p>...</p>
@@ -32,6 +32,7 @@
 
 <script>
 import { Toast } from 'mint-ui';
+import { Lazyload } from 'mint-ui';
 export default {
   data() {
     return {
@@ -138,6 +139,11 @@ export default {
       img {
         width: 5rem;
         height: 100%;
+      }
+      img[lazy=loading] {
+        width: 5rem;
+        height: 100%;
+        // background: #ececec;
       }
       .content {
         padding-left: .5rem;

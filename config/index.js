@@ -13,8 +13,8 @@ module.exports = {
     proxyTable: {
       '/admin': {
         changeOrigin: true,
-        // target: 'http://192.168.5.102:8082',  // 天津测试环境
-        target: 'http://47.95.200.232:8082',  // 天津线上环境
+        // target: 'http://47.95.200.232:8082',  // 济南线上环境
+        target: 'http://60.208.43.217:8087',  // 济南线上环境
         // pathRewrite: {
         //     '^/api': '/Coolmart'
         // }
