@@ -64,6 +64,8 @@ export default {
   },
   methods: {
     loadMore() {
+      this.$common.confirmLogin();  // 测试登录超时弹框
+
       console.log(this.currentPage, this.loading)
 
       this.currentPage++;

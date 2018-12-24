@@ -10,11 +10,13 @@ import MintUI from 'mint-ui'
 import store from '@/store'
 import FastClick from 'fastclick'
 import Cookies from 'js-cookie'
+import {common} from '@/utils/common'
 import '@/utils/filters'
 import request from './utils/request';
 import './utils/mock';
 import './utils/validate';
 Vue.prototype.$http = request;
+Vue.prototype.$common = common
 
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function() {
