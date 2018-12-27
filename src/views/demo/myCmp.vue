@@ -17,16 +17,28 @@
       <span @click="startTime2">计数器2(手动点击)：</span>
       <my-count-down v-model="time2" :start="start" @on-finish="finish2" v-show="show"></my-count-down>
     </div>
+
+    <div class="item">
+      <span>Marquee1：</span>
+      <my-cmp-marquee :arrMarquee="arr2"></my-cmp-marquee>
+    </div>
+
+    <div class="item">
+      <span>Marquee：</span>
+      <my-cmp-marquee :arrMarquee="arr2" :direction="`down`"></my-cmp-marquee>
+    </div>
   </div>
 </template>
 
 <script>
 import myCmpLike from '@/components/MyLike'
 import myCountDown from '@/components/MyCountDown'
+import myCmpMarquee from '@/components/MyMarquee'
 export default {
   components: {
     myCmpLike,
-    myCountDown
+    myCountDown,
+    myCmpMarquee
   },
   data() {
     return {
@@ -51,6 +63,27 @@ export default {
       value: '',
       start: false,
       
+      // Marquee
+      arr2: [
+        {
+          name: '扣水电费离开水电费1'
+        },
+        {
+          name: '扣水电费离开水电费2'
+        },
+        {
+          name: '扣水电费离开水电费3'
+        },
+        {
+          name: '扣水电费离开水电费4'
+        },
+        {
+          name: '扣水电费离开水电费5'
+        },
+        {
+          name: '扣水电费离开水电费6'
+        },
+      ]
     }
   },
   methods: {
