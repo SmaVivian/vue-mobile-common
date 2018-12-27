@@ -8,17 +8,29 @@
       <span>我的收藏列表(点击删除){{item.likeId2}}：</span>
       <my-cmp-like :isLike="item.collect2==='1'?true:false" :likeId="item.likeId2" :callback="deleItem"></my-cmp-like>
     </div>
+
+    <div class="item">
+      <span>计数器：</span>
+      <my-count-down v-model="time1" @on-finish="finish"></my-count-down>
+    </div>
+    <div class="item">
+      <span @click="startTime2">计数器2(手动点击)：</span>
+      <my-count-down v-model="time2" :start="start" @on-finish="finish2" v-show="show"></my-count-down>
+    </div>
   </div>
 </template>
 
 <script>
 import myCmpLike from '@/components/MyLike'
+import myCountDown from '@/components/MyCountDown'
 export default {
   components: {
-    myCmpLike
+    myCmpLike,
+    myCountDown
   },
   data() {
     return {
+      // 收藏/点赞
       collect: '0',
       likeId: '123323',
       arr1: [
@@ -30,7 +42,14 @@ export default {
           collect2: '1',
           likeId2: '33333333'
         },
-      ]
+      ],
+
+      // 计数器
+      show: true,
+      time1: 15,
+      time2: 5,
+      value: '',
+      start: false,
       
     }
   },
@@ -40,6 +59,18 @@ export default {
         return item.likeId2 === likeId;
       });
       this.arr1.splice(index, 1);
+    },
+    finish(index) {
+      // this.show = false
+      // this.value = 'completed'
+      console.log('current index', index)
+    },
+    startTime2() {
+      this.start = true;
+    },
+    finish2 (index) {
+      // this.start = false
+      this.show = false
     }
   },
   mounted() {
