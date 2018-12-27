@@ -8,7 +8,7 @@
     <div class="demo-list" flex="dir:left box:mean">
       <router-link tag="div" to="/demo/login" class="item g-1px-r g-1px-t" flex="cross:center main:center">登录</router-link>
       <router-link tag="div" to="/demo/form" class="item g-1px-r g-1px-t" flex="cross:center main:center">表单校验</router-link>
-      <div class="item g-1px-t" flex="cross:center main:center">list</div>
+      <router-link tag="div" to="/demo/myCmp" class="item g-1px-t" flex="cross:center main:center">自定义组件</router-link>
     </div>
   </div>
 </template>

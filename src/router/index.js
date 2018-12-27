@@ -7,7 +7,8 @@ import ListPullDown from '@views/demo/listPullDown'   // 列表下拉刷新无�
 import ListPullDownDetail from '@views/demo/listPullDownDetail'   // 列表详情
 import ListTab from '@views/demo/listTab'   // 列表下拉刷新无限加载
 import DemoForm from '@views/demo/form'   // 表单
-import DemoLogin from '@views/demo/login'   // 表单
+import DemoLogin from '@views/demo/login'   // 登录
+import DemoMyCmp from '@views/demo/myCmp'   // 自定义组件
 // import HelloWorld from '@cmp/HelloWorld'
 
 Vue.use(Router)
@@ -94,6 +95,12 @@ export default new Router({
       path: '/demo/login',
       name: 'DemoLogin',
       component: DemoLogin,
+      meta: { keepAlive: false }
+    },
+    {
+      path: '/demo/myCmp',
+      name: 'DemoMyCmp',
+      component: DemoMyCmp,
       meta: { keepAlive: false }
     },
     // {
