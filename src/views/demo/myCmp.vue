@@ -25,7 +25,7 @@
 
     <div class="item">
       <span>Marquee：</span>
-      <my-cmp-marquee :arrMarquee="arr2" :direction="`down`"></my-cmp-marquee>
+      <my-cmp-marquee :arrMarquee="arr2" :direction="`down`" :interval="5000" :duration="1000" :itemHeight="50"></my-cmp-marquee>
     </div>
   </div>
 </template>

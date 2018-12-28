@@ -1,7 +1,10 @@
 <template>
-  <div class="cmp-marque" style="height: 30px;">
+  <div class="cmp-marque" :style="{height: height + 'px'}">
     <ul ref="box" :style="{transform: `translate3d(0,${currenTranslateY}px,0)`, transition: `transform ${noAnimate ? 0 : duration}ms`}">
-      <li v-for="(item, index) in dataList" :key="index">{{item.name}}</li>
+      <li v-for="(item, index) in dataList" 
+        :key="index" 
+        :style="{height: height + 'px', lineHeight: height + 'px'}">
+        {{item.name}}</li>
     </ul>
   </div>
 </template>
@@ -26,13 +29,16 @@ export default {
       type: String,
       default: 'up'
     },
-    itemHeight: Number
+    itemHeight: {
+      type: Number,
+      default: 30
+    }
   },
   data () {
     return {
       dataList: this.arrMarquee,
       currenTranslateY: 0,
-      height: '',
+      height: this.itemHeight,
       length: 0,
       currentIndex: 0,
       noAnimate: false
@@ -53,7 +59,6 @@ export default {
       let firstItem = this.$refs.box.firstElementChild
       if(!firstItem) return
       this.length = this.$refs.box.children.length
-      this.height = this.itemHeight || firstItem.offsetHeight
 
       if (this.direction === 'up') {
         this.cloneNode = firstItem.cloneNode(true)
@@ -116,8 +121,6 @@ export default {
 <style lang="less" scoped>
   .cmp-marque {
     text-align: center;
-    height: 30px;
-    line-height: 30px;
     overflow: hidden;
   }
 </style>
