@@ -18,6 +18,7 @@ Vue.mixin({
   beforeRouteLeave:function(to, from, next){
     //此处判断是如果返回上一层，你可以根据自己的业务更改此处的判断逻辑，酌情决定是否摧毁本层缓存。
     if (from && from.meta.rank && to.meta.rank && from.meta.rank>to.meta.rank) {
+      debugger
       if (this.$vnode && this.$vnode.data.keepAlive) {
         if (this.$vnode.parent && this.$vnode.parent.componentInstance && this.$vnode.parent.componentInstance.cache) {
           if (this.$vnode.componentOptions)
@@ -51,57 +52,57 @@ export default new Router({
       path: '/',
       name: 'Demo',
       component: Demo,
-      meta: { keepAlive: false }
+      meta: { }
     },
     {
       path: '/demo',
       name: 'DemoList',
       component: DemoList,
-      meta: { keepAlive: false, rank: 1 }
+      meta: {rank: 1 }
     },
     {
       path: '/list/infinite',
       name: 'ListInfinite',
       component: ListInfinite,
-      meta: { keepAlive: false, rank: 2 }
+      meta: {rank: 2 }
     },
     // 缓存组件示例start
     {
       path: '/list/pulldown',
       name: 'ListPullDown',
       component: ListPullDown,
-      meta: { keepAlive: false, rank: 2 }
+      meta: {rank: 2 }
     },
     {
       path: '/list/pulldown/detail',
       name: 'ListPullDownDetail',
       component: ListPullDownDetail,
-      meta: { keepAlive: false, rank: 3 }
+      meta: {rank: 3 }
     },
     // 缓存组件示例end
     {
       path: '/list/tab',
       name: 'ListTab',
       component: ListTab,
-      meta: { keepAlive: false }
+      meta: { }
     },
     {
       path: '/demo/form',
       name: 'DemoForm',
       component: DemoForm,
-      meta: { keepAlive: false }
+      meta: { }
     },
     {
       path: '/demo/login',
       name: 'DemoLogin',
       component: DemoLogin,
-      meta: { keepAlive: false }
+      meta: { }
     },
     {
       path: '/demo/myCmp',
       name: 'DemoMyCmp',
       component: DemoMyCmp,
-      meta: { keepAlive: false }
+      meta: { }
     },
     // {
     //   path: '/',
