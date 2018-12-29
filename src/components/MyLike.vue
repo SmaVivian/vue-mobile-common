@@ -63,13 +63,17 @@ export default {
         if(res.success == 1) {
           if(!this.callback) {
             this.isMyLike = !this.isMyLike;
+            Toast({
+            message: this.isMyLike?'添加收藏成功':'取消收藏成功',
+              position: 'bottom'
+            });
           } else {
             this.callback(this.likeId);  // 删除
+            Toast({
+              message: '取消收藏成功',
+              position: 'bottom'
+            });
           }
-          Toast({
-            message: this.isMyLike?'添加收藏成功':'取消收藏成功',
-            position: 'bottom'
-          });
         } else {
           Toast({
             message: res.error.message || (this.isMyLike?'取消收藏失败':'添加收藏失败'),

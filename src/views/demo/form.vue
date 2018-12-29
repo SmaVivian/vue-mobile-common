@@ -6,6 +6,13 @@
       </div>
 
       <div class="m-form-col">
+        <div class="control">
+          <label class="label">详情</label>
+          <i class="g-icon-more"></i>
+        </div>
+      </div>
+
+      <div class="m-form-col">
         <div class="title">邮箱验证</div>
         <div class="control">
           <label class="label">邮箱</label>
@@ -15,6 +22,7 @@
             class="border"
             :class="{'input': true, 'is-danger': errors.has('email') }">
           <i v-show="email" class="clear" @click="email=''">×</i>
+          <i class="g-icon-more"></i>
         </div>
         <div v-show="errors.has('email')" class="help">{{ errors.first('email') }}</div>
       </div>
