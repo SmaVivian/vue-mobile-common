@@ -17,6 +17,7 @@ import './utils/mock';
 import './utils/validate';
 Vue.prototype.$http = request;
 Vue.prototype.$common = common
+Vue.prototype.$staticUrl = process.env.staticPath // 静态数据路径
 
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function() {

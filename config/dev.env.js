@@ -6,5 +6,6 @@ module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
   // BASE_API: '"https://api-dev"'
   // BASE_API: '"http://mock.com/zhangwei"'   // mock数据
-  BASE_API: '"/admin"'    // 开发
+  BASE_API: '"/admin"',    // 开发
+  staticPath: '"../static/"'   // static路径配置
 })

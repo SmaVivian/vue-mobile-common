@@ -9,6 +9,7 @@ import ListTab from '@views/demo/listTab'   // 列表下拉刷新无限加载
 import DemoForm from '@views/demo/form'   // 表单
 import DemoLogin from '@views/demo/login'   // 登录
 import DemoMyCmp from '@views/demo/myCmp'   // 自定义组件
+import DemoSwiper from '@views/demo/mySwiper'   // 自定义组件
 // import HelloWorld from '@cmp/HelloWorld'
 
 Vue.use(Router)
@@ -18,7 +19,7 @@ Vue.mixin({
   beforeRouteLeave:function(to, from, next){
     //此处判断是如果返回上一层，你可以根据自己的业务更改此处的判断逻辑，酌情决定是否摧毁本层缓存。
     if (from && from.meta.rank && to.meta.rank && from.meta.rank>to.meta.rank) {
-      debugger
+      
       if (this.$vnode && this.$vnode.data.keepAlive) {
         if (this.$vnode.parent && this.$vnode.parent.componentInstance && this.$vnode.parent.componentInstance.cache) {
           if (this.$vnode.componentOptions)
@@ -102,6 +103,12 @@ export default new Router({
       path: '/demo/myCmp',
       name: 'DemoMyCmp',
       component: DemoMyCmp,
+      meta: { }
+    },
+    {
+      path: '/demo/swiper',
+      name: 'DemoSwiper',
+      component: DemoSwiper,
       meta: { }
     },
     // {
