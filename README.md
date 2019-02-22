@@ -1,6 +1,6 @@
 # mobile-project
 
-> a vue mobile project
+> a vue mobile project comon
 
 ## 框架说明
 - [vue] https://cn.vuejs.org/
